@@ -1,0 +1,176 @@
+.title {
+	color: #fff;
+	@include adaptiveValue('font-size', 70, 58, 0);
+	font-weight: 700;
+	line-height: normal;
+	span {
+		color: $greenColor;
+	}
+}
+
+.form {
+	max-width: rem(533);
+	background-color: #fff;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-between;
+	background: #fff;
+	padding: rem(6);
+	gap: rem(5px);
+	@media (max-width: $mobileSmall) {
+		flex-direction: column;
+	}
+	&__input {
+		flex: 1 1 auto;
+		padding: 0 rem(20);
+		color: #263238;
+		line-height: normal;
+		@media (max-width: $mobileSmall) {
+			padding: rem(20);
+		}
+	}
+	&__input::placeholder {
+		font-family: 'League Spartan';
+		color: #263238;
+		font-weight: 500;
+		@media (max-width: $mobileSmall) {
+			text-align: center;
+		}
+	}
+	&__button {
+	}
+}
+
+.text {
+	color: #fff;
+	@include adaptiveValue('font-size', 18, 16, 0);
+	line-height: 1.8; /* 32.4px */
+}
+
+.button {
+	font-family: Lato;
+	padding: rem(21) rem(25);
+	line-height: math.div(22, 18);
+	border-radius: rem(10);
+	background: $greenColor;
+	color: #fff;
+	font-weight: 500;
+	line-height: normal;
+	transition: all 0.3s ease 0s;
+	white-space: nowrap;
+	@media (any-hover: hover) {
+		&:hover {
+			background: rgb(75, 160, 75);
+		}
+	}
+	@media (max-width: $mobile) {
+		padding: rem(16) rem(18);
+	}
+	@media (max-width: $mobileSmall) {
+		padding: rem(12) rem(16);
+	}
+	&_border {
+		background-color: transparent;
+		border: 1px solid #fff;
+		padding: rem(20) rem(25);
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: rgba(31, 31, 31, 0.6);
+				color: $greenColor;
+				border: 1px solid $greenColor;
+			}
+		}
+	}
+	&-get-started {
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+}
+
+.image-block {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	border-radius: rem(20);
+	background: rgba(255, 255, 255, 0.05);
+	@include adaptiveValue('padding-top', 168, 30, 0);
+	@include adaptiveValue('padding-bottom', 168, 30, 0);
+	@include adaptiveValue('padding-right', 45, 20, 0);
+	@include adaptiveValue('padding-left', 45, 20, 0);
+	&__item {
+		flex: 1 1 100%;
+		overflow: hidden;
+		border-radius: rem(20);
+		text-align: center;
+		position: relative;
+		padding-bottom: calc(604 / 660 * 100%);
+		img {
+			transform: scale(1.01);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			z-index: 10;
+		}
+	}
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		border-radius: 50%;
+		border: 1px solid #fff;
+		top: rem(-10);
+		right: rem(-242.5);
+		width: rem(585);
+		height: rem(585);
+	}
+	&::after {
+		top: rem(-74);
+	}
+}
+.image-block_2 {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	border-radius: rem(20);
+	background: rgba(255, 255, 255, 0.05);
+	@include adaptiveValue('padding-top', 168, 30, 0);
+	@include adaptiveValue('padding-bottom', 168, 30, 0);
+	@include adaptiveValue('padding-right', 45, 20, 0);
+	@include adaptiveValue('padding-left', 45, 20, 0);
+	&__item {
+		flex: 1 1 100%;
+		overflow: hidden;
+		border-radius: rem(20);
+		text-align: center;
+		position: relative;
+		padding-bottom: calc(604 / 660 * 100%);
+		img {
+			transform: scale(1.01);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			z-index: 10;
+		}
+	}
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		border-radius: 50%;
+		border: 1px solid #fff;
+		bottom: rem(-10);
+		left: rem(-242.5);
+		width: rem(585);
+		height: rem(585);
+	}
+	&::after {
+		bottom: rem(-74);
+	}
+}

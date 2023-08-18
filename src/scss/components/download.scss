@@ -1,0 +1,53 @@
+.download {
+	&__container {
+		@include adaptiveValue('padding-top', 100, 25, 0);
+		@include adaptiveValue('padding-bottom', 200, 50, 0);
+	}
+	&__body {
+		position: relative;
+		overflow: hidden;
+		@include adaptiveValue('padding', 72, 40);
+
+		border-radius: rem(20);
+		background: rgba(255, 255, 255, 0.07);
+	}
+	&__title {
+		max-width: rem(700);
+		margin: 0 auto;
+		text-align: center;
+		@include adaptiveValue('font-size', 56, 30, 0);
+		@include adaptiveValue('margin-bottom', 50, 40);
+	}
+	&__apps {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include adaptiveValue('gap', 25, 18);
+		@media (max-width: $mobileSmall) {
+			flex-direction: column;
+		}
+	}
+	&__app {
+	}
+	&__circle {
+		&_1 {
+			position: absolute;
+			width: rem(585);
+			height: rem(585);
+			top: rem(-80);
+			left: calc(50% - (rem(585) / 2));
+			border-radius: 50%;
+			border: 1px solid rgba(255, 255, 255, 0.37);
+		}
+		&_2 {
+			position: absolute;
+			width: rem(585);
+			height: rem(585);
+			top: rem(-20);
+			left: calc(50% - (rem(585) / 2));
+
+			border-radius: 50%;
+			border: 1px solid rgba(255, 255, 255, 0.37);
+		}
+	}
+}

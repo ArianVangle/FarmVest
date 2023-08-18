@@ -1,0 +1,101 @@
+.pathway {
+	&__container {
+		@include adaptiveValue('padding-top', 100, 25, 0);
+		@include adaptiveValue('padding-bottom', 100, 25, 0);
+		display: grid;
+		grid-template-columns: 1fr percent(750, 1420);
+		// @include adaptiveValue('gap', 126, 100);
+
+		@media (max-width: $tablet) {
+			grid-template-columns: 1fr;
+			@include adaptiveValue('gap', 25, 15, 0);
+			text-align: center;
+		}
+	}
+	&__image {
+		align-self: start;
+		@media (max-width: $tablet) {
+			order: 2;
+		}
+	}
+	&__content {
+		@include adaptiveValue('padding-left', 100, 70, 0);
+		@media (max-width: $tablet) {
+			order: 1;
+			padding: 0;
+		}
+	}
+	&__title {
+		max-width: rem(490);
+		@include adaptiveValue('padding-bottom', 28, 0, 0);
+		@media (max-width: $tablet) {
+			max-width: none;
+		}
+	}
+	&__text {
+		@include adaptiveValue('padding-bottom', 40, 10, 0);
+		max-width: rem(574);
+		@media (max-width: $tablet) {
+			max-width: none;
+		}
+	}
+}
+
+.spollers {
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		@media (max-width: $tablet) {
+			max-width: rem(700);
+			margin: 0 auto;
+			text-align: left;
+		}
+	}
+	&__item:not(:last-child) {
+		@include adaptiveValue('margin-bottom', 24, 12, 0);
+	}
+	&__title {
+		position: relative;
+		@include adaptiveValue('padding-top', 24, 12, 0);
+		@include adaptiveValue('padding-bottom', 24, 12, 0);
+		@include adaptiveValue('padding-left', 30, 15, 0);
+		@include adaptiveValue('padding-right', 30, 15, 0);
+		border-radius: rem(10);
+		background: rgba(255, 255, 255, 0.05);
+		color: #fff;
+		font-size: rem(24);
+		font-weight: 400;
+		line-height: 1.77; /* 42.48px */
+		width: 100%;
+		text-align: left;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&::after {
+			content: '';
+			width: rem(24);
+			height: rem(24);
+			background: url('@img/pathway/spoiler-icon.svg') 0 0 no-repeat;
+			flex: 0 0 rem(24);
+			transition: all 0.5s ease 0s;
+		}
+	}
+	&__title.spoiler-active::after {
+		transition: all 0.8s ease 0s;
+		transform: rotate(90deg);
+	}
+	&__body {
+		max-width: rem(450);
+		height: 0;
+		overflow: hidden;
+		padding: 0 rem(20);
+		transition: all 0.5s ease 0s;
+	}
+	&__body.spoiler-body {
+		transition: all 0.8s ease 0s;
+		padding-top: rem(10);
+		height: rem(60);
+	}
+}

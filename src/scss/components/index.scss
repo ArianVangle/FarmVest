@@ -1,0 +1,113 @@
+.main-block {
+	&::before,
+	&::after {
+		content: '';
+		transition: top 2s ease 0s;
+		position: absolute;
+		z-index: 30;
+		border-radius: 50%;
+		border: 1px solid #fff;
+		@include adaptiveValue('width', 585, 300, 0);
+		@include adaptiveValue('height', 585, 300, 0);
+	}
+
+	&::before {
+		top: 0;
+		transform: translate(-40%, -40%);
+	}
+	&::after {
+		top: 0;
+		transform: translate(-30%, -50%);
+	}
+	&__container {
+		display: flex;
+		padding-top: rem(250);
+		@include adaptiveValue('padding-top', 260, 150, 0);
+		@include adaptiveValue('padding-bottom', 100, 15, 0);
+		text-align: center;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		z-index: 20;
+	}
+	&__title {
+		max-width: rem(780);
+		@include adaptiveValue('margin-bottom', 69, 40, 0);
+	}
+	&__text {
+		max-width: rem(580);
+		@include adaptiveValue('margin-bottom', 48, 32, 0);
+	}
+	&__form {
+		@media (max-width: $mobileSmall) {
+			width: 100%;
+			padding: 0 2%;
+		}
+	}
+	&__icons {
+	}
+}
+
+.menu-open .main-block::after,
+.menu-open .main-block::before {
+	top: -40%;
+}
+
+.icons-main-block {
+	@media (max-width: rem(800)) {
+		opacity: 0.6;
+	}
+	&__item {
+		position: absolute;
+		z-index: -1;
+		width: 40px;
+		height: 40px;
+		pointer-events: none;
+	}
+}
+.icon-main-block {
+	&__item {
+		&_1 {
+			top: percent(379, 974);
+			left: percent(387, 1620);
+			background: url('@img/block/icons/01.svg') 0 0 no-repeat;
+		}
+		&_2 {
+			top: percent(682, 974);
+			left: percent(150, 1620);
+			background: url('@img/block/icons/02.svg') 0 0 no-repeat;
+		}
+		&_3 {
+			top: percent(757, 974);
+			left: percent(563, 1620);
+			background: url('@img/block/icons/03.svg') 0 0 no-repeat;
+		}
+		&_4 {
+			top: percent(134, 974);
+			left: percent(1299, 1620);
+			background: url('@img/block/icons/04.svg') 0 0 no-repeat;
+		}
+		&_5 {
+			top: percent(419, 974);
+			left: percent(1475, 1620);
+			background: url('@img/block/icons/05.svg') 0 0 no-repeat;
+			@media (max-width: $mobileSmall) {
+				display: none;
+			}
+		}
+		&_6 {
+			top: percent(367, 974);
+			right: rem(15);
+			background: url('@img/block/icons/06.svg') 0 0 no-repeat;
+		}
+		&_7 {
+			top: percent(776, 974);
+			left: percent(1471, 1620);
+			background: url('@img/block/icons/07.svg') 0 0 no-repeat;
+			@media (max-width: $mobileSmall) {
+				display: none;
+			}
+		}
+	}
+}

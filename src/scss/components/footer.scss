@@ -1,0 +1,143 @@
+.footer {
+	@media (max-width: $mobileSmall) {
+		text-align: center;
+	}
+	background: rgba(53, 64, 70, 0.5);
+	&__container {
+		&_big {
+		}
+	}
+	&__main {
+		@include adaptiveValue('padding-bottom', 100, 60);
+		@include adaptiveValue('padding-top', 68, 30);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+	}
+	&__bottom {
+		@include adaptiveValue('padding-bottom', 55, 30);
+		@include adaptiveValue('padding-top', 55, 30);
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			align-items: center;
+			row-gap: rem(20);
+		}
+	}
+
+	&__copy {
+	}
+	&__menu {
+	}
+}
+.main-footer {
+	display: grid;
+	gap: rem(20);
+	grid-template-columns: repeat(3, 1fr);
+	@media (max-width: $tablet) {
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: rem(40);
+	}
+	@media (max-width: $mobileSmall) {
+		grid-template-columns: 1fr;
+	}
+
+	&__info {
+		max-width: rem(330);
+		@media (max-width: $tablet) {
+			order: 1;
+		}
+		@media (max-width: $mobileSmall) {
+			max-width: none;
+		}
+	}
+	&__logo {
+		display: inline-block;
+		margin-bottom: rem(24);
+	}
+	&__text {
+	}
+	&__form {
+	}
+	&__contacts {
+		justify-self: end;
+		display: flex;
+		column-gap: rem(48);
+		@media (max-width: $tablet) {
+			justify-self: start;
+			order: 2;
+		}
+		@media (max-width: $mobileSmall) {
+			justify-self: center;
+		}
+		@media (max-width: rem(600)) {
+			row-gap: rem(20);
+			flex-direction: column;
+		}
+	}
+	&__social {
+	}
+	&__label {
+		font-weight: 700;
+		margin-bottom: rem(24);
+	}
+	&__call-us {
+	}
+	&__phone {
+	}
+}
+.text {
+}
+.form-main {
+	@media (max-width: $tablet) {
+		order: 3;
+		grid-column: span 2;
+		justify-self: center;
+		text-align: center;
+		max-width: rem(500);
+	}
+	@media (max-width: $mobileSmall) {
+		grid-column: span 1;
+	}
+	&__text {
+		margin-bottom: rem(24);
+	}
+	&__form {
+	}
+}
+.form {
+	&__input {
+	}
+	&__button {
+	}
+}
+.button {
+}
+.social {
+	display: flex;
+	gap: rem(16);
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: rem(48);
+		height: rem(48);
+		border-radius: 50%;
+		background-color: #fff;
+	}
+}
+.menu-footer {
+	display: flex;
+	justify-content: space-between;
+	&__list {
+		display: flex;
+		@include adaptiveValue('gap', 40, 15);
+		@media (max-width: $mobile) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+	&__item {
+	}
+	&__link {
+	}
+}

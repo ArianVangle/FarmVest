@@ -1,0 +1,89 @@
+.why {
+	&__container {
+		@include adaptiveValue('padding-top', 100, 25, 0);
+		@include adaptiveValue('padding-bottom', 100, 25, 0);
+		display: grid;
+		grid-template-columns: 1fr percent(680, 1420);
+		@media (max-width: $tablet) {
+			grid-template-columns: 1fr;
+			@include adaptiveValue('gap', 25, 15, 0);
+			text-align: center;
+		}
+	}
+	&__content {
+		@include adaptiveValue('padding-right', 180, 80, 0);
+		@media (max-width: $tablet) {
+			padding-right: 0;
+			text-align: center;
+		}
+	}
+	&__title {
+		max-width: rem(490);
+		@include adaptiveValue('padding-bottom', 28, 0, 0);
+		@media (max-width: $tablet) {
+			max-width: none;
+		}
+	}
+	&__text {
+		@include adaptiveValue('padding-bottom', 40, 10, 0);
+		max-width: rem(574);
+		@media (max-width: $tablet) {
+			max-width: none;
+		}
+	}
+	&__steps {
+	}
+	&__image {
+	}
+	&__button {
+		color: #fff;
+		font-size: 18px;
+		font-weight: 500;
+		line-height: normal;
+		padding: rem(20) rem(55);
+	}
+}
+
+.steps-why {
+	&__item {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue('column-gap', 50, 30);
+		@include adaptiveValue('margin-bottom', 40, 30);
+		@media (max-width: $tablet) {
+			justify-content: center;
+		}
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 64px;
+		height: 64px;
+		background: rgba(255, 255, 255, 0.05);
+		border-radius: 50%;
+	}
+	&__body {
+	}
+}
+.image-why {
+	&__item {
+		overflow: hidden;
+		position: relative;
+		border-radius: rem(20);
+		padding-bottom: percent(812, 680);
+		img {
+			transform: scale(1.001);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			@media (max-width: $tablet) {
+				transform: scale(1.01);
+			}
+		}
+	}
+}
